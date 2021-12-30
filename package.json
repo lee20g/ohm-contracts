@@ -1,0 +1,66 @@
+{
+  "name": "olympus-contracts",
+  "version": "1.0.0",
+  "description": "Smart Contracts for Olympus",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "@nomiclabs/hardhat-etherscan": "^2.1.7",
+    "@openzeppelin/contracts": "^3.4.0",
+    "@typechain/ethers-v5": "^7.2.0",
+    "@typechain/hardhat": "^2.3.1",
+    "@types/mocha": "^9.0.0",
+    "dotenv": "^10.0.0",
+    "hardhat-deploy": "^0.9.4",
+    "ts-node": "^10.4.0",
+    "typechain": "^5.2.0",
+    "typescript": "^4.4.4"
+  },
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.2",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "@openzeppelin/test-helpers": "^0.5.12",
+    "chai": "^4.3.4",
+    "ethereum-waffle": "^3.0.0",
+    "ethers": "^5.0.0",
+    "hardhat": "^2.5.0",
+    "prettier": "^2.3.2",
+    "prettier-plugin-solidity": "^1.0.0-beta.17",
+    "solhint": "^3.3.6",
+    "solhint-plugin-prettier": "0.0.5"
+  },
+  "scripts": {
+    "test": "npx hardhat test",
+    "compile": "npx hardhat compile",
+    "compile5": "hardhat typechain --config hardhat.config.5.ts",
+    "clean": "npx hardhat clean",
+    "start": "npx hardhat run scripts/deployAll.js",
+    "lint:sol": "solhint -f table contracts/**/*.sol",
+    "test:Olympus": "hardhat test --no-compile ./test/Olympus.test.ts",
+    "test:Spartacus": "hardhat test --no-compile ./test/Spartacus.test.ts",
+    "deploy:kovan:ohm": "hardhat --network kovan deploy --no-compile --reset --tags OlympusERC20Token",
+    "deploy:kovan:treasury": "hardhat --network kovan deploy --no-compile --reset --tags OlympusTreasury",
+    "deploy:kovan:daiBond": "hardhat --network kovan deploy --no-compile --reset --tags daiBond",
+    "deploy:kovan:daiohmBond": "hardhat --network kovan deploy --no-compile --reset --tags daiohmBond",
+    "deploy:kovan:sohm": "hardhat --network kovan deploy --no-compile --reset --tags sohm",
+    "deploy:kovan:staking": "hardhat --network kovan deploy --no-compile --reset --tags staking",
+    "deploy:kovan:StakingHelper": "hardhat --network kovan deploy --no-compile --reset --tags StakingHelper",
+    "deploy:kovan:StakingWarmup": "hardhat --network kovan deploy --no-compile --reset --tags StakingWarmup",
+    "deploy:kovan:RedeemHelper": "hardhat --network kovan deploy --no-compile --reset --tags RedeemHelper",
+    "deploy:kovan:OHMCirculatingSupplyConrtact": "hardhat --network kovan deploy --no-compile --reset --tags OHMCirculatingSupplyConrtact",
+    "deploy:kovan:OlympusBondingCalculator": "hardhat --network kovan deploy --no-compile --reset --tags OlympusBondingCalculator",
+    "deploy:kovan:Distributor": "hardhat --network kovan deploy --no-compile --reset --tags Distributor",
+    "deploy:kovan:OHMSale": "hardhat --network kovan deploy --no-compile --reset --tags OHMSale",
+    "test:ftm:timelock": "hardhat --network ftm deploy --no-compile --reset --tags Timelock_Transfer"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OlympusDAO/olympus-contracts.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/OlympusDAO/olympus-contracts/issues"
+  },
+  "homepage": "https://github.com/OlympusDAO/olympus-contracts#readme"
+}
